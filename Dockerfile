@@ -1,12 +1,12 @@
 # neovim
 #
-# VERSION       0.1
+# VERSION       0.2
 
 FROM alpine:3.5
 
 LABEL maintainer "Jack Stephenson <docker@bancast.net>"
 
-RUN apk add --no-cache neovim git curl && \
+RUN apk add --no-cache neovim git curl editorconfig && \
     mkdir -p /root/.config/nvim/autoload /root/.config/nvim/bundle && \
     curl -LSso /root/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && \
     cd /root/.config/nvim/bundle && \
